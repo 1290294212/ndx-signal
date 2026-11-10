@@ -1,6 +1,11 @@
 name: Publish daily NDX strategy signal
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/ndx-daily.yml'
   schedule:
     # 07:35 Beijing time (23:35 UTC), after US regular close year-round.
     - cron: '35 23 * * *'
