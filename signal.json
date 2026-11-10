@@ -1,0 +1,34 @@
+{
+  "series": "NASDAQ100",
+  "last_observation_date": "2026-11-09",
+  "last_close": 27907.625,
+  "sma200": 27995.402,
+  "deviation_from_sma200_pct": -0.314,
+  "volatility40_annual_pct": 27.23,
+  "trend_state": "down",
+  "preview_target_pct": 12.854,
+  "most_recent_weekly_decision": {
+    "date": "2026-11-06",
+    "raw_weight": 0.135907,
+    "target_weight": 0.135907,
+    "adjust": true
+  },
+  "last_weekly_decision_validated": true,
+  "last_weekly_decision_calendar_fallback": false,
+  "latest_observation_is_weekly_decision_close": false,
+  "current_observation_week_has_confirmed_close": false,
+  "signal_explanation": "Current observation is a daily preview; last weekly decision stays in force.",
+  "calendar_warnings": [],
+  "data_points": 1254,
+  "execution_note": "At earliest next market session; no automatic trades; check ETF premium and fund subscriptions",
+  "source": "yfinance",
+  "source_warnings": [
+    "fred: ReadTimeout: HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=18)"
+  ],
+  "age_calendar_days": 1,
+  "stale": false,
+  "trade_status": "RESEARCH_SIGNAL_ONLY",
+  "generated_at_utc": "2026-11-10T02:41:35+00:00",
+  "public_data_only": true,
+  "not_financial_advice": true
+}
