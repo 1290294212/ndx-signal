@@ -1,0 +1,44 @@
+name: Research NDX dual-track backtest
+
+on:
+  workflow_dispatch:
+    inputs:
+      dca_rmb_per_session:
+        description: "Outside-fund aggregate per session (research proxy RMB)"
+        required: true
+        default: "300"
+      core_cap_pct:
+        description: "Outside long-term sleeve cap in percent"
+        required: true
+        default: "20"
+
+permissions:
+  contents: read
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install research dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install "pandas>=2.2,<3" "numpy>=1.26,<3" "requests>=2.31,<3" "yfinance>=0.2.50,<2" "exchange_calendars>=4.5,<5"
+      - name: Run index-only comparison
+        run: |
+          python research/ndx_dual_track_backtest.py \
+            --dca-rmb-per-session "${{ inputs.dca_rmb_per_session }}" \
+            --core-cap-pct "${{ inputs.core_cap_pct }}" \
+            --output results/ndx_dual_track.json
+      - name: Upload results (including failed runs' logs if available)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ndx-dual-track-research
+          path: results/
+          if-no-files-found: warn
+          retention-days: 30
