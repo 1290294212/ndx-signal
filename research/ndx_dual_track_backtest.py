@@ -72,7 +72,11 @@ def signals(prices):
 def decision_dates(index):
     # An actual exchange calendar avoids treating a truncated midweek feed as a week close.
     import exchange_calendars as xcals
-    cal = xcals.get_calendar("XNYS")
+    # exchange_calendars defaults to a rolling recent history (~20 years).
+    # Explicit bounds are required for the 1999-2025 backtest.
+    start = (index.min() - pd.Timedelta(days=10)).strftime("%Y-%m-%d")
+    end = (index.max() + pd.Timedelta(days=10)).strftime("%Y-%m-%d")
+    cal = xcals.get_calendar("XNYS", start=start, end=end)
     dates = []
     for period, observed in pd.Series(index, index=index).groupby(index.to_period("W-FRI")):
         observed_last = observed.iloc[-1]
