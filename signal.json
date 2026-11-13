@@ -1,12 +1,12 @@
 {
   "series": "NASDAQ100",
-  "last_observation_date": "2026-11-11",
-  "last_close": 28374.252,
-  "sma200": 28017.713,
-  "deviation_from_sma200_pct": 1.273,
-  "volatility40_annual_pct": 27.868,
+  "last_observation_date": "2026-11-12",
+  "last_close": 28289.188,
+  "sma200": 28029.045,
+  "deviation_from_sma200_pct": 0.928,
+  "volatility40_annual_pct": 27.499,
   "trend_state": "up",
-  "preview_target_pct": 35.884,
+  "preview_target_pct": 36.365,
   "most_recent_weekly_decision": {
     "date": "2026-11-06",
     "raw_weight": 0.135907,
@@ -28,7 +28,7 @@
   "age_calendar_days": 1,
   "stale": false,
   "trade_status": "RESEARCH_SIGNAL_ONLY",
-  "generated_at_utc": "2026-11-12T04:04:03+00:00",
+  "generated_at_utc": "2026-11-13T03:32:42+00:00",
   "public_data_only": true,
   "not_financial_advice": true
 }
