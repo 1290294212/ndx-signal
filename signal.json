@@ -26,10 +26,10 @@
     "fred: ReadTimeout: HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=18)",
     "akshare: AttributeError: index_us_stock_sina 已在 1.20.45 更名为 index_us_daily_sina，请改用 ak.index_us_daily_sina；参数与返回的列也可能有调整，用 ak.interface_info(\"ind"
   ],
-  "age_calendar_days": 2,
+  "age_calendar_days": 3,
   "stale": false,
   "trade_status": "RESEARCH_SIGNAL_ONLY",
-  "generated_at_utc": "2026-11-22T03:23:58+00:00",
+  "generated_at_utc": "2026-11-23T03:55:23+00:00",
   "public_data_only": true,
   "not_financial_advice": true
 }
